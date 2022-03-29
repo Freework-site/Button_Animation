@@ -1,0 +1,142 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1c1c1b;
+}
+.cart_btn
+{
+    position: relative;
+    width: 200px;
+    height: 60px;
+    padding: 10px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #fff;
+    outline: none;
+    cursor: pointer;
+    color: #1c1c1b;
+    transition: .3s ease-in-out;
+    overflow: hidden;
+}
+.cart_btn:active
+{
+    transform: scale(.9);
+}
+.cart_btn .fa-cart-shopping
+{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%,-50%);
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.cart_btn .fa-box
+{
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: -20%;
+    font-size: 1.2em;
+    transform: translate(-50%,-50%);
+}
+.cart_btn span
+{
+    position: absolute;
+    left: 50%;
+    z-index: 3;
+    color: #1c1c1b;
+    top: 50%;
+    font-size: 1.2em;
+    transform: translate(-50%,-50%);
+}
+.cart_btn span.add_to_cart
+{
+    opacity: 1;
+}
+.cart_btn span.added
+{
+    opacity: 0;
+}
+.cart_btn.active .fa-cart-shopping
+{
+    animation: cart 2s ease-in-out forwards;
+}
+.cart_btn.active .fa-box
+{
+    animation: parcel 2s ease-in-out forwards;
+}
+.cart_btn.active .add_to_cart
+{
+    animation: txt1 2s ease-in-out forwards;
+}
+.cart_btn.active .added
+{
+    animation: txt2 2s ease-in-out forwards;
+}
+
+
+/* Add Animation */
+
+@keyframes cart {
+    0%
+    {
+        left: -10%;
+    }
+    40%,60%
+    {
+        left: 50%;
+    }
+    100%
+    {
+        left: 110%;
+    }
+}
+
+@keyframes parcel {
+    0%,40%
+    {
+        left: -20%;
+    }
+   60%
+    {
+        top: 35%;
+        left: 52%;
+    }
+    100%
+    {
+        top: 35%;
+        left: 112%;
+    }
+}
+@keyframes txt1 {
+    0%,20%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+    }
+}
+@keyframes txt2 {
+    0%,80%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
